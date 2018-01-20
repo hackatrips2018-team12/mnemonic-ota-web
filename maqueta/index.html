@@ -761,14 +761,6 @@
 <script>
     $(document).ready(function () {
 
-        var availableTags = [
-            "Barcelona",
-            "Madrid"
-        ];
-        $( "#twotabsearchtextbox" ).autocomplete({
-            source: availableTags
-        });
-
         $( "#search-id" ).on( "click", function() {
             $( "#hotels-list" ).empty();
             var url = 'https://sandbox.hotelscombined.com/api/2.0/hotels/basic?destination=place%3A' +
@@ -788,11 +780,6 @@
             };
 
             $.ajax(settings).done(function (response) {
-                /*$( "#hotels-section" ).append( "<div class=\"main_title\">\n" +
-                    "        <h2>PENDING <span>Top</span> hotels</h2>\n" +
-                    "        <p>Texto tras la búsqueda</p>\n" +
-                    "    </div>" );*/
-
 
                 for(var index in response.results)
                 {
