@@ -7,9 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <meta name="description" content="Citytours - Premium site template for city tours agencies, transfers and tickets.">
-    <meta name="author" content="Ansonika">
-    <title>CITY TOURS - City tours and travel site template by Ansonika</title>
+    <title>OTA - Online Travel Agency integrated with Mnemonic Dapp</title>
     
     <!-- Favicons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -33,7 +31,10 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-        
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/app.js"></script>
+
 </head>
 <body>
 
@@ -388,9 +389,6 @@
             
 			<div class="form_title">
 				<h3><strong><i class="icon-tag-1"></i></strong>Booking summary</h3>
-				<p>
-					Mussum ipsum cacilds, vidis litro abertis.
-				</p>
 			</div>
 			<div class="step">
 				<table class="table confirm">
@@ -404,10 +402,10 @@
 				<tbody>
 				<tr>
 					<td>
-						<strong>Louvre musuem tickets</strong>
+						<strong>Hotel Mercure París</strong>
 					</td>
 					<td>
-						2x
+						1x
 					</td>
 				</tr>
 				<tr>
@@ -415,7 +413,7 @@
 						<strong>Date</strong>
 					</td>
 					<td>
-						25 Febraury 2015
+						2 nights (27 February 2018 - 29 February 2018)
 					</td>
 				</tr>
 				<tr>
@@ -423,7 +421,7 @@
 						<strong>To</strong>
 					</td>
 					<td>
-						Jhon Doe
+						John Doe
 					</td>
 				</tr>
 				<tr>
@@ -436,6 +434,7 @@
 				</tr>
 				</tbody>
 				</table>
+			  
 				<table class="table confirm">
 				<thead>
 				<tr>
@@ -447,10 +446,10 @@
 				<tbody>
 				<tr>
 					<td>
-						<strong>Senna river tour</strong>
+						<strong>Louvre Museum Tickets</strong>
 					</td>
 					<td>
-						2x
+						1x
 					</td>
 				</tr>
 				<tr>
@@ -458,7 +457,7 @@
 						<strong>Date</strong>
 					</td>
 					<td>
-						27 Febraury 2015
+						25 Febraury 2018
 					</td>
 				</tr>
 				<tr>
@@ -466,7 +465,7 @@
 						<strong>To</strong>
 					</td>
 					<td>
-						Jhon Doe
+						John Doe
 					</td>
 				</tr>
 				<tr>
@@ -492,25 +491,30 @@
 			<a class="btn_full_outline" href="invoice.html" target="_blank">View your invoice</a>
 		</div>
 		<div class="box_style_4">
-            <button class="btn btn-default" type="button" style="margin-left:0;">
+            <button class="btn btn-default" type="button" style="margin-left:0;" title="Print voucher">
                 <i class="icon-print"></i>
             </button>
-            <button class="btn btn-default" type="button" style="margin-left:0;">
+            <button class="btn btn-default" type="button" style="margin-left:0;" title="Download voucher">
                 <i class="icon-doc-text"></i>
             </button>
-            <button class="btn btn-default" type="button" style="margin-left:0;">
+            <button id="mnemonic-icon" class="btn btn-default" type="button" style="margin-left:0;" title="Store on your Mnemonic vault">
                 <i class="icon-search"></i>
             </button>
-			<!--<i class="icon_set_1_icon-89"></i>
-			<h4>Have <span>questions?</span></h4>
-			<a href="tel://004542344599" class="phone">+45 423 445 99</a>
-			<small>Monday to Friday 9.00am - 7.30pm</small>-->
+
+	    <div id="mnemonic-container" style="display: none">
+	      <h4>Store vouchers in Mnemonic</h4>
+	      <p>Please, provide your Mnemonic vault's address:</p>
+	      <form id="mnemonic-form">
+                <input type="text" class="form-control" id="mnemonic-address" placeholder="your Mnemonic address">
+                <input type="submit" name="Store" value="Store" id="mnemonic-form-button" class="button_drop">
+	      </form>
+	      <div id="msg"></div>
+	    </div>
 		</div>
 		</aside>
         
 	</div><!--End row -->
 </div><!--End container -->
-
 <footer>
         <div class="container">
             <div class="row">
