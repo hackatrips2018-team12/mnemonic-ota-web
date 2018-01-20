@@ -1,0 +1,282 @@
+.tabs {
+	position: relative;
+	width: 100%;
+	overflow: visible;
+	margin-bottom:45px;
+}
+
+/* Nav */
+.tabs nav {
+	text-align: center;
+	overflow:hidden;
+}
+
+.tabs nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: inline-block;
+}
+
+.tabs nav ul li {
+	border: 1px solid #e2e2e2;
+	border-bottom: none;
+	margin: 0 0.25em;
+	display: block;
+	float: left;
+	position: relative;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.tabs nav li.tab-current {
+	border: 1px solid #e2e2e2;
+	border-bottom: none;
+	z-index: 100;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.tabs nav li.tab-current:before,
+.tabs nav li.tab-current:after {
+	content: '';
+	position: absolute;
+	height: 1px;
+	right: 100%;
+	bottom: 0;
+	width: 1000px;
+	background: #e2e2e2;
+}
+
+.tabs nav li.tab-current:after {
+	right: auto;
+	left: 100%;
+	width: 4000px;
+}
+
+.tabs nav a {
+	color: #555;
+	display: block;
+	font-size: 18px;
+	line-height: 2.5;
+	padding: 0 1.25em;
+	white-space: nowrap;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	
+}
+
+.tabs nav a:hover {
+	color: #111;
+}
+
+/* Icons */
+.tabs nav a:before {
+	display: inline-block;
+	vertical-align: middle;
+	text-transform: none;
+	font-weight: normal;
+	font-variant: normal;
+	font-family: 'icon_set_1';
+	line-height: 1;
+	speak: none;
+	font-size:24px;
+	-webkit-font-smoothing: antialiased;
+	margin: -0.25em 0.4em 0 0;
+	position:relative;
+	top:3px;
+
+}
+
+.icon-hotels:before {
+	content: "\26";
+}
+
+.icon-tours:before {
+	content: "\3e";
+}
+
+.icon-restaurants:before {
+	content: "\5a";
+}
+
+
+/* Content */
+.content section {
+	padding: 40px 0 0 0;
+	display: none;
+	max-width: 1230px;
+	margin: 0 auto;
+}
+
+.content section:before,
+.content section:after {
+	content: '';
+	display: table;
+}
+
+.content section:after {
+	clear: both;
+}
+
+/* Fallback example */
+.no-js .content section {
+	display: block;
+	padding-bottom: 2em;
+	border-bottom: 1px solid #e2e2e2;
+}
+
+.content section.content-current {
+	display: block;
+}
+
+.mediabox {
+	float: left;
+	width: 35%;
+	padding: 0 15px;
+}
+.list_tours_tabs h2{
+	margin:0;
+	padding:0;
+	font-size:20px;
+	color:#999;
+	margin-bottom:15px;
+}
+.list_tours_tabs  ul{
+	list-style:none;
+	margin:0 0 0 0;
+	width:100%;
+	padding:0;
+}
+.list_tours_tabs  ul li{
+	position:relative;
+	padding:15px 5px 10px 70px;
+	min-height:65px;
+	width:100%;
+	border-bottom:1px solid #ededed;
+	display:table;
+}
+.list_tours_tabs  ul li a:hover {
+	color:#e04f67;
+}
+.list_tours_tabs  ul li a small{
+	color:#777;
+	margin:0;
+	padding:0;
+	font-size:12px;
+}
+.list_tours_tabs  ul li:last-child{
+	border-bottom:none;
+	padding-left:15px;
+	padding-top:10px;
+}
+.list_tours_tabs  ul li div{
+	display: table-cell;
+	vertical-align:middle;
+}
+.list_tours_tabs  ul li figure{
+	width:45px;
+	height:45px;
+	overflow:hidden;
+	position:absolute;
+	left:10px;
+	top:10px;
+}
+.list_tours_tabs  ul li figure img{
+	width:45px;
+	height:auto;
+}
+.list_tours_tabs  ul li h3{
+	font-size:15px;
+	margin:0;
+	padding:0;
+}
+.list_tours_tabs  ul li:hover h3{
+	color:#e04f67;
+}
+.list_tours_tabs  ul li:hover{
+	background-color:#f8f8f8;
+}
+.list_hotels_tabs h3{
+	font-size:18px;
+	margin-top:0;
+}
+
+
+
+/* Example media queries */
+
+@media screen and (max-width: 52.375em) {
+	.tabs nav a span {
+		display: none;
+	}
+
+	.tabs nav a:before {
+		margin-right: 0;
+	}
+
+	.mediabox {
+		float: none;
+		width: auto;
+		padding: 0 0 35px 0;
+		font-size: 90%;
+	}
+
+	.mediabox img {
+		float: left;
+		margin: 0 25px 10px 0;
+		max-width: 40%;
+	}
+
+	.mediabox h3 {
+		margin-top: 0;
+	}
+
+	.mediabox p {
+		margin-left: 40%;
+		margin-left: calc(40% + 25px);
+	}
+
+	.mediabox:before,
+	.mediabox:after {
+		content: '';
+		display: table;
+	}
+
+	.mediabox:after {
+		clear: both;
+	}
+}
+
+@media screen and (max-width: 32em) {
+	
+	.mediabox {
+		text-align: center;
+	}
+
+	.mediabox img {
+		float: none;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+
+	.mediabox h3 {
+		margin: 1.25em 0 1em;
+	}
+
+	.mediabox p {
+		margin: 0;
+	}
+}
