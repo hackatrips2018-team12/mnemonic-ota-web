@@ -1,6 +1,7 @@
 // Hardcoded constants:
 const contractAddress = "0x1012b627b910e13739b466be1313afa954b77101";
 const otaAddress = "0xbcDda8a84852dC328f90c4E881B3AC30D6a7AC51";
+const otaPrivateKey = "cc343a48408ac9c8172d8507fd686364279db418af3ed764964f3a0cb2da3dc0";
 const blockChainNodeUrl = "https://ropsten.infura.io";
 const ipfsHost = "ipfs.infura.io";
 const ipfsPort = 5001;
@@ -35,19 +36,17 @@ window.App = {
 	  "expiration-time": "",
  	  "offchain-url": "https://ipfs.io/ipfs/ab32567982c",
       };	  
-      addDocument(params);
+      addDocumentByOTA(params);
       event.preventDefault();
     });      
       
   }
 };
 
-function addDocument(params) {
+function addDocumentByUser(params) {
   console.log("Add document with pararms: " + params);
     
   let expiration_time = Math.round(new Date() / 1000) + (parseInt(params["expiration-time"]) * 24 * 60 * 60);
-
-  console.log("expiration_time: " + expiration_time);
    
   var code = mnemonic.addDocument.getData(
     params["document-name"],
@@ -55,13 +54,61 @@ function addDocument(params) {
     params["issuer-name"],
     expiration_time,
     params["offchain-url"]);
-    web3.eth.sendTransaction({to: contractAddress, from: web3.eth.accounts[0], data: code}, function(err, txHash) {
+    
+  web3.eth.sendTransaction({to: contractAddress, from: web3.eth.accounts[0], data: code}, function(err, txHash) {
       if (!err) {
         console.log("Tx done! https://ropsten.etherscan.io/tx/" + txHash);
         $("#msg").html("Great! Your voucher <a href='https://ropsten.etherscan.io/tx/" + txHash + "'>has been saved</a> in your Mnemonic Vault");
         $("#msg").show();  
       }
     });    
+}
+
+function addDocumentByOTA(params) {
+  console.log("Add document with pararms: " + params);
+    
+  let expiration_time = Math.round(new Date() / 1000) + (parseInt(params["expiration-time"]) * 24 * 60 * 60);
+   
+  var code = mnemonic.addDocument.getData(
+    params["document-name"],
+    params["document-key"],
+    params["issuer-name"],
+    expiration_time,
+    params["offchain-url"]);
+
+  var Tx = require('ethereumjs-tx');
+  var privateKey = new Buffer(otaPrivateKey, 'hex')
+
+  web3.eth.getTransactionCount(otaAddress, function(err, result) {
+      if (!err) {	
+	
+  var rawTx = {
+    nonce: result,
+    gasPrice: '0x9502F9000', // 40000000000 (40 Gwei)
+    gasLimit: '0x61A80', // 400000
+    to: contractAddress, 
+    value: '0x00', 
+    data: code
+  }
+
+  var tx = new Tx(rawTx);
+  tx.sign(privateKey);
+
+  var serializedTx = tx.serialize();
+
+
+  web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function(err, txHash) {
+    if (!err)
+      console.log("Tx done! https://ropsten.etherscan.io/tx/" + txHash);
+      $("#msg").html("Great! Your voucher <a href='https://ropsten.etherscan.io/tx/" + txHash + "'>has been saved</a> in your Mnemonic Vault");
+      $("#msg").show();  
+    }
+  );
+  
+      } else {
+	  console.error(err);
+      }
+  });    
 }
 
 window.addEventListener('load', function() {
