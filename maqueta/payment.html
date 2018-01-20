@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+/<!DOCTYPE html>
 <!--[if IE 8]><html class="ie ie8"> <![endif]-->
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <html>
@@ -340,9 +340,9 @@
             <div class="bs-wizard">
   			
                 <div class="col-xs-4 bs-wizard-step complete">
-                  <div class="text-center bs-wizard-stepnum">Your cart</div>
+                  <div class="text-center bs-wizard-stepnum">Select your hotel</div>
                   <div class="progress"><div class="progress-bar"></div></div>
-                  <a href="cart.html" class="bs-wizard-dot"></a>
+                  <a href="index_8.html" class="bs-wizard-dot"></a>
                 </div>
                                
                 <div class="col-xs-4 bs-wizard-step active">
@@ -385,13 +385,13 @@
 					<div class="col-md-6 col-sm-6">
 						<div class="form-group">
 							<label>First name</label>
-							<input type="text" class="form-control" id="firstname_booking" name="firstname_booking">
+							<input type="text" class="form-control" id="firstname_booking" value="Nombre" name="firstname_booking">
 						</div>
 					</div>
 					<div class="col-md-6 col-sm-6">
 						<div class="form-group">
 							<label>Last name</label>
-							<input type="text" class="form-control" id="lastname_booking" name="lastname_booking">
+							<input type="text" class="form-control" id="lastname_booking" value="Apellido1 Apellido2" name="lastname_booking">
 						</div>
 					</div>
 				</div>
@@ -399,13 +399,13 @@
 					<div class="col-md-6 col-sm-6">
 						<div class="form-group">
 							<label>Email</label>
-							<input type="email" id="email_booking" name="email_booking" class="form-control">
+							<input type="email" id="email_booking" name="email_booking" value="email@gmail.com" class="form-control">
 						</div>
 					</div>
 					<div class="col-md-6 col-sm-6">
 						<div class="form-group">
 							<label>Confirm email</label>
-							<input type="email" id="email_booking_2" name="email_booking_2" class="form-control">
+							<input type="email" id="email_booking_2" name="email_booking_2" value="email@gmail.com" class="form-control">
 						</div>
 					</div>
 				</div>
@@ -413,7 +413,7 @@
 					<div class="col-md-6 col-sm-6">
 						<div class="form-group">
 							<label>Telephone</label>
-							<input type="text" id="telephone_booking" name="telephone_booking" class="form-control">
+							<input type="text" id="telephone_booking" name="telephone_booking" value="+34 666 666 666" class="form-control">
 						</div>
 					</div>
 				</div>
@@ -428,13 +428,13 @@
 			<div class="step">
 				<div class="form-group">
 					<label>Name on card</label>
-					<input type="text" class="form-control" id="name_card_bookign" name="name_card_bookign">
+					<input type="text" class="form-control" id="name_card_bookign" value="Nombre Apellido1 Apellido2" name="name_card_bookign">
 				</div>
 				<div class="row">
 					<div class="col-md-6 col-sm-6">
 						<div class="form-group">
 							<label>Card number</label>
-							<input type="text" id="card_number" name="card_number" class="form-control">
+							<input type="text" id="card_number" name="card_number" value="2345 6378 1428 9451" class="form-control">
 						</div>
 					</div>
 					<div class="col-md-6 col-sm-6">
@@ -447,12 +447,12 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type="text" id="expire_month" name="expire_month" class="form-control" placeholder="MM">
+									<input type="text" id="expire_month" name="expire_month" value="11" class="form-control" placeholder="MM">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type="text" id="expire_year" name="expire_year" class="form-control" placeholder="Year">
+									<input type="text" id="expire_year" name="expire_year" class="form-control" value="2018" placeholder="Year">
 								</div>
 							</div>
 						</div>
@@ -463,7 +463,7 @@
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<input type="text" id="ccv" name="ccv" class="form-control" placeholder="CCV">
+										<input type="text" id="ccv" name="ccv" class="form-control" value="845" placeholder="CCV">
 									</div>
 								</div>
 								<div class="col-md-8">
@@ -497,8 +497,8 @@
 						<div class="form-group">
 							<label>Country</label>
 							<select class="form-control" name="country" id="country">
-								<option value="" selected>Select your country</option>
-								<option value="Europe">Europe</option>
+								<option value="" >Select your country</option>
+								<option value="Spain" selected>Spain</option>
 								<option value="United states">United states</option>
 								<option value="Asia">Asia</option>
 							</select>
@@ -509,7 +509,7 @@
 					<div class="col-md-6 col-sm-6">
 						<div class="form-group">
 							<label>Street line 1</label>
-							<input type="text" id="street_1" name="street_1" class="form-control">
+							<input type="text" id="street_1" name="street_1" value="Avenida Partenón, 5" class="form-control">
 						</div>
 					</div>
 					<div class="col-md-6 col-sm-6">
@@ -523,19 +523,19 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<label>City</label>
-							<input type="text" id="city_booking" name="city_booking" class="form-control">
+							<input type="text" id="city_booking" name="city_booking" value="Madrid" class="form-control">
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="form-group">
 							<label>State</label>
-							<input type="text" id="state_booking" name="state_booking" class="form-control">
+							<input type="text" id="state_booking" name="state_booking" value="Madrid" class="form-control">
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="form-group">
 							<label>Postal code</label>
-							<input type="text" id="postal_code" name="postal_code" class="form-control">
+							<input type="text" id="postal_code" name="postal_code" value="28042" class="form-control">
 						</div>
 					</div>
 				</div><!--End row -->
