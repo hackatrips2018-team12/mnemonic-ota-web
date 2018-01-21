@@ -8,7 +8,7 @@ const ipfsPort = 5001;
 
 // Import libraries we need.
 import { default as Web3} from 'web3';
-import { default as contract } from 'truffle-contract'
+import { default as contract } from 'truffle-contract';
 import mnemonicABI from '../contracts/MnemonicVault.json';
 
 var mnemonicContract = web3.eth.contract(mnemonicABI.abi);
